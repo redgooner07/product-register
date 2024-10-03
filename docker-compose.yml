@@ -20,9 +20,8 @@ services:
       - db
   
   db:
-    image: postgres
+    image: postgres:15-bullseye
     volumes:
       - 'db-data:/var/lib/postgresql/data'
     environment:
-      - 'POSTGRES_USER=postgres'
-      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_HOST_AUTH_METHOD=trust'
